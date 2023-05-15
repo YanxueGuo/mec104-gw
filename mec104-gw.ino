@@ -3,6 +3,8 @@ const int sleepTime = 10000; // 休眠时间（毫秒）
 unsigned long lastSoundTime = 0; // 上次检测到声音的时间
 int wakeUpPin = 2;//看看能不能用旋钮或者其他开关什么的实现
 
+
+
 void setup() {
   pinMode(micPin, INPUT);
   Serial.begin(9600);
@@ -32,3 +34,35 @@ void wakeUp() {
   sleep_disable(); // 禁用休眠功能
   detachInterrupt(0); // 取消中断配置
 }
+// #include
+
+// int potpin = 0; // Assign analog pin to potentiometer
+// int val = 0; // Variable to read value from potentiometer, starts at 0
+// int oldVolume = 0; // Used to compare volume levels
+// int currentVolume = 0; // Used to compare volume levels
+
+// void setup() {
+// Serial.begin(9600); // This will allow you to read the current value of the dial
+// }
+
+// void loop() {
+// val = analogRead(potpin); // Reads potentiometer value (between 0 and 1023)
+// val = map(val, 0, 1023, 0, 50); // Scale value to volume (value between 0 and 50)
+// Serial.print(val); // Print dial/volume position
+// Serial.println(); //
+
+// if (val != oldVolume) {
+// if(val > oldVolume){
+// //delay(100);
+// Consumer.write(MEDIA_VOLUME_UP);
+// currentVolume = currentVolume + 2;
+// oldVolume = val;
+// }
+// else{
+// //delay(100);
+// Consumer.write(MEDIA_VOLUME_DOWN);
+// currentVolume = currentVolume – 2;
+// oldVolume = val;
+// }
+// }
+// }https://www.deviceplus.com/arduino/usb-volume-control-with-arduino/
